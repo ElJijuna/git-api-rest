@@ -1,0 +1,59 @@
+{
+  "name": "git-api-rest",
+  "version": "0.1.0",
+  "description": "Configurable REST API for querying cloned git repositories",
+  "type": "module",
+  "main": "dist/index.js",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "lint": "eslint src/ ui/src/",
+    "lint:fix": "eslint src/ ui/src/ --fix",
+    "typecheck": "tsc --noEmit",
+    "ui:dev": "MOCK=false vite --config vite.config.ts",
+    "ui:dev:mock": "vite --config vite.config.ts",
+    "ui:build": "vite build --config vite.config.ts",
+    "ui:routes": "tsr generate --config vite.config.ts"
+  },
+  "keywords": ["git", "api", "rest", "typescript", "express"],
+  "author": "pilmee <pilmee@gmail.com> (https://github.com/ElJijuna)",
+  "license": "MIT",
+  "dependencies": {
+    "@gnome-ui/charts": "^1.28.0",
+    "@gnome-ui/core": "^1.41.0",
+    "@gnome-ui/hooks": "^1.27.0",
+    "@gnome-ui/icons": "*",
+    "@gnome-ui/layout": "^1.13.0",
+    "@gnome-ui/react": "^1.38.0",
+    "@tanstack/react-router": "^1.168.23",
+    "dotenv": "^16.3.1",
+    "express": "^5.1.0",
+    "js-yaml": "^4.1.0",
+    "pino": "^10.3.1",
+    "pino-http": "^10.3.0",
+    "pino-pretty": "^13.1.3",
+    "react": "19",
+    "react-dom": "19",
+    "simple-git": "^3.22.0"
+  },
+  "devDependencies": {
+    "@tanstack/router-plugin": "^1.167.22",
+    "@types/express": "^5.0.0",
+    "@types/js-yaml": "^4.0.9",
+    "@types/node": "^22.0.0",
+    "@vitejs/plugin-react": "^4.0.0",
+    "super-configs": "file:../super-configs",
+    "tsx": "^4.19.0",
+    "typescript": "^5.8.0",
+    "vite": "^8.0.0"
+  },
+  "overrides": {
+    "@vitejs/plugin-react": {
+      "vite": "$vite"
+    }
+  },
+  "engines": {
+    "node": ">=22.0.0"
+  }
+}

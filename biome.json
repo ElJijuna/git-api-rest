@@ -1,0 +1,6 @@
+{
+  "extends": ["./node_modules/super-configs/biome.json"],
+  "files": {
+    "includes": ["src/**", "ui/src/**", "*.ts", "*.js", "*.json"]
+  }
+}

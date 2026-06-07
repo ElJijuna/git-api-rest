@@ -1,0 +1,25 @@
+repos:
+  # Bitbucket Datacenter — url auto-built from BITBUCKET_* env vars
+  - key: MYPROJECT
+    repo: my-repo
+    branch: main
+
+  # SSH explicit url (key mounted via SSH_KEY_PATH volume)
+  - key: INFRA
+    repo: k8s-config
+    url: git@github.com:org/k8s.git
+    branch: main
+
+  # HTTPS with token auth (token injected into url at clone time)
+  - key: OTHER
+    repo: private-repo
+    url: https://github.com/org/private-repo.git
+    branch: main
+    auth:
+      token: ghp_xxxxxxxxxxxx  # or set AUTH_TOKEN_OTHER_PRIVATEREPO env var
+
+  # Public repo — no auth needed
+  - key: OSS
+    repo: public-lib
+    url: https://github.com/org/public-lib.git
+    branch: main
