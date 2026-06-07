@@ -19,7 +19,7 @@ services:
       - NODE_ENV=production
       - LOG_LEVEL=${LOG_LEVEL:-info}
     volumes:
-      - ./repos.example.yml:/config/repos.yml:ro
+      - ${REPOS_CONFIG_FILE:-./repos.yml}:/config/repos.yml:ro
       - git-repos:/data/repos
       - ${SSH_KEY_PATH:-~/.ssh}:/root/.ssh:ro
     restart: unless-stopped
