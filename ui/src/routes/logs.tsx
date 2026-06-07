@@ -60,7 +60,7 @@ function Logs() {
     return () => esRef.current?.close();
   }, []);
 
-  const terminalContent = lines.map(formatLogLine).join('\n');
+  const terminalLines = lines.length > 0 ? lines.map(formatLogLine) : ['# Waiting for log entries...'];
 
   return (
     <Box orientation="vertical" spacing={16} style={{ padding: '24px', maxWidth: 900, margin: '0 auto' }}>
@@ -84,7 +84,7 @@ function Logs() {
         </Box>
       )}
 
-      <TerminalView content={terminalContent || '# Waiting for log entries...'} />
+      <TerminalView lines={terminalLines} autoScroll />
     </Box>
   );
 }

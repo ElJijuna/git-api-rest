@@ -47,9 +47,9 @@ function Dashboard() {
   const errorRepos = health?.repos.filter(r => r.status === 'error').length ?? 0;
 
   const pieData = [
-    { label: 'Ready', value: readyCount, color: 'var(--success-color)' },
-    { label: 'Error', value: errorRepos, color: 'var(--error-color)' },
-    { label: 'Other', value: totalRepos - readyCount - errorRepos, color: 'var(--warning-color)' },
+    { label: 'Ready', value: readyCount, color: 'var(--gnome-green-4, #2ec27e)' },
+    { label: 'Error', value: errorRepos, color: 'var(--gnome-red-3, #e01b24)' },
+    { label: 'Other', value: totalRepos - readyCount - errorRepos, color: 'var(--gnome-orange-3, #ff7800)' },
   ].filter(d => d.value > 0);
 
   const barData = (topEndpoints?.endpoints ?? []).map(e => ({
